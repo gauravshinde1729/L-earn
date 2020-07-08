@@ -1,0 +1,33 @@
+{% extends 'platform/base.html' %}
+{% block css %}
+    .profile-pic{
+        height:200px;
+
+    }
+{% endblock %}
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+
+    <div class="row">
+        <div class="col"></div>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+      <img class="card-img-top profile-pic" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{profile.user.username}}</h5>
+      </div>
+    </div>
+
+    </div>
+    <div class="col">
+        <h1 class="display-4">Hello !<br> </h1><h4>{{profile.firstname}} {{profile.lastname}}</h4>
+      <h4>Bio:</h4>
+      <hr>
+    <p class="lead">{{profile.bio}}</p>
+  </div>
+        <div class="col"></div>
+</div>
+</div>
+
+
+{% endblock %}

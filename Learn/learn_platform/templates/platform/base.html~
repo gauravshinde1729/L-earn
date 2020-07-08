@@ -29,10 +29,6 @@
   color: #ffa000;
   -webkit-transition: .4s;
   transition: .4s; }
-  .white-lighter-hover {
-  color: #fff;
-  -webkit-transition: .4s;
-  transition: .4s; }
               {% block css %} {% endblock %}
       </style>
       </head>
@@ -50,13 +46,13 @@
 <!--        <a class="nav-link" href="/platform/">Homepage<span class="sr-only">(current)</span></a>-->
 <!--      </li>-->
       <li class="nav-item active">
-          <a class="btn white-lighter-hover" href="/platform"><strong>All Courses</strong></a>
+          <a class="btn amber-darker-hover" href="/platform"><strong>All Courses</strong></a>
       </li>
     <li class="nav-item active">
-          <a class="btn white-lighter-hover" href="/platform/profilepage"><strong>profile</strong></a>
+          <a class="btn amber-darker-hover" href="/platform/profilepage"><strong>profile</strong></a>
       </li>
         <li class="nav-item active">
-          <a class="btn white-lighter-hover" href="#"><strong>My Courses</strong></a>
+          <a class="btn amber-darker-hover" href="#"><strong>My Courses</strong></a>
       </li>
     </ul>
 

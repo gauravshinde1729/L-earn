@@ -21,18 +21,7 @@
             border-radius:20px;
             height:30px;
       }
-    .pink-lighter-hover {
-  color: #ec407a;
-  -webkit-transition: .4s;
-  transition: .4s; }
-  .amber-darker-hover {
-  color: #ffa000;
-  -webkit-transition: .4s;
-  transition: .4s; }
-  .white-lighter-hover {
-  color: #fff;
-  -webkit-transition: .4s;
-  transition: .4s; }
+
               {% block css %} {% endblock %}
       </style>
       </head>
@@ -49,15 +38,10 @@
 <!--      <li class="nav-item active">-->
 <!--        <a class="nav-link" href="/platform/">Homepage<span class="sr-only">(current)</span></a>-->
 <!--      </li>-->
-      <li class="nav-item active">
-          <a class="btn white-lighter-hover" href="/platform"><strong>All Courses</strong></a>
-      </li>
-    <li class="nav-item active">
-          <a class="btn white-lighter-hover" href="/platform/profilepage"><strong>profile</strong></a>
-      </li>
-        <li class="nav-item active">
-          <a class="btn white-lighter-hover" href="#"><strong>My Courses</strong></a>
-      </li>
+<!--      <li class="nav-item active">-->
+<!--        <a class="nav-link" href="#">Cart(<span id="cartcount">0</span>)</a>-->
+<!--      </li>-->
+
     </ul>
 
 <!--      Search functionality-->
@@ -71,10 +55,9 @@
       {% if user.is_authenticated %}
       <p> {{user.get_username}}</p>
       {% endif %}
-      {% if user.is_authenticated %}
-      <a class="btn btn-success my-2 ml-2 my-sm-0" href="/platform/profilepage/">Profile</a>
-      <a class="btn btn-success my-2 ml-2 my-sm-0" href="/platform/logout/">Logout</a>
-      {% endif %}
+      <a class="btn btn-success my-2 ml-2 my-sm-0" href="/login/">Login</a>
+      <a class="btn btn-success my-2 ml-2 my-sm-0" href="/register/">Register</a>
+
 
   </div>
 </nav>
