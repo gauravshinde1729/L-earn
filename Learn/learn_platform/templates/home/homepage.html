@@ -3,15 +3,24 @@
 
 {% endblock %}
 {% block body %}
-
+<h1>{{request.path}}</h1>
     <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Hello!</h4>
+
+            <p>{{message}}</p>
+
+          <hr>
+        </div>
+            {% endfor %}
         <div class="mt-3 jumbotron ">
       <h1 class="display-4">Hey, Scholars!</h1>
       <p class="lead">Welcome To Our Online Learning and Sharing Platform</p>
       <hr class="my-4">
       <h1 class="display-4">Want to teach?</h1>
           <p class="lead">
-         <a class="mt-2 btn btn-primary" href="#">  Become a Teacher Here</a>
+         <a class="mt-2 btn btn-primary" href="{% url 'tutorApplication' %}">  Become a Teacher Here</a>
       </p>
             <hr>
       <p class="lead">

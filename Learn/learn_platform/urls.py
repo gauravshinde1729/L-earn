@@ -7,5 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name="platform_home"),
     path('logout/',views.logoutPage,name="Logoutpage"),
-    path('profilepage/',views.profilePage,name="profilePage")
+    path('profilepage/',views.profilePage,name="profilePage"),
+    path('editprofile/',views.profileEdit,name="profileEdit")
 ]

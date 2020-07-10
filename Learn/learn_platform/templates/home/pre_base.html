@@ -10,7 +10,21 @@
 
     <title>{% block title  %} {% endblock %}</title>
       <style>
+    .custom-navbar{
 
+            background-color:#18A4A5  ;
+            padding:20px;
+      }
+      .custom-search{
+
+            border-radius:20px;
+            height:30px;
+      }
+
+  .white-lighter-hover {
+  color: #fff;
+  -webkit-transition: .4s;
+  transition: .4s; }
       .custom-navbar{
 
             background-color:#18A4A5  ;
@@ -35,9 +49,9 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-<!--      <li class="nav-item active">-->
-<!--        <a class="nav-link" href="/platform/">Homepage<span class="sr-only">(current)</span></a>-->
-<!--      </li>-->
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Homepage<span class="sr-only">(current)</span></a>
+      </li>
 <!--      <li class="nav-item active">-->
 <!--        <a class="nav-link" href="#">Cart(<span id="cartcount">0</span>)</a>-->
 <!--      </li>-->
@@ -55,8 +69,9 @@
       {% if user.is_authenticated %}
       <p> {{user.get_username}}</p>
       {% endif %}
-      <a class="btn btn-success my-2 ml-2 my-sm-0" href="/login/">Login</a>
-      <a class="btn btn-success my-2 ml-2 my-sm-0" href="/register/">Register</a>
+      <a class="btn white-lighter-hover my-2 ml-2 my-sm-0" href="/tutor/">Tutor-login</a>
+      <a class="btn white-lighter-hover my-2 ml-2 my-sm-0" href="/login/">Login as student</a>
+      <a class="btn white-lighter-hover my-2 ml-2 my-sm-0" href="/register/">Student Registration</a>
 
 
   </div>

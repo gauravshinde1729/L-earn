@@ -1,0 +1,51 @@
+{% extends 'platform/base.html' %}
+
+{% block body %}
+<div class="container mt-5ry">
+    <h1>Hey {{profile.firstname}} ,edit your profile here </h1>
+    <hr>
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="firstname">Firstname</label>
+      <input type="text" class="form-control " maxlength="20" id="firstname" name="firstname" value={{profile.firstname}} onkeypress="return AvoidSpace(event)">
+    </div>
+       <div class="form-group col-md-6">
+      <label for="lastname">Lastname</label>
+      <input type="text" class="form-control" id="lastname" maxlength="20" name="lastname" value={{profile.lastname}} onkeypress="return AvoidSpace(event)">
+    </div>
+
+  </div>
+
+    <div class="form-group">
+    <label for="bio">Bio</label>
+      <textarea type="text" maxlength="100" class="form-control" id="bio" name="bio" >{{profile.bio}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input type="text" class="form-control"  maxlength="20" id="city" name="city" value={{profile.city}} onkeypress="return AvoidSpace(event)">
+  </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <input type="text" class="form-control" maxlength="20" id="country" name="country" value={{profile.country}} onkeypress="return AvoidSpace(event)">
+  </div>
+
+  <button type="submit" class="btn btn-primary" >Save changes</button>
+</form>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+  function AvoidSpace(event) {
+    var k = event ? event.which : window.event.keyCode;
+    if (k == 32) return false;
+}
+
+</script>
+
+{% endblock %}

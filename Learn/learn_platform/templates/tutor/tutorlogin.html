@@ -79,11 +79,13 @@
 	<div class="container h-100">
 	<div class="container mt-5">
 		{% for message in messages %}
-		<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		  <strong>Welcome!!</strong> {{message}}
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
+		<div class="alert alert-warning role="alert">
+		<h4 class="alert-heading">Login - Error!</h4>
+
+            <p>{{message}}</p>
+
+          <hr>
+
 		</div>
 		{% endfor %}
 
@@ -95,14 +97,15 @@
 				<div class="d-flex justify-content-center">
 
 
-					<h3 id="form-title">LOGIN</h3>
+					<h3 id="form-title">Tutor login</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
+
 					<form method="POST" action="">
 						{% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-user-plus"></i></span>
 							</div>
 							<input type="text" name="username" placeholder="Username..." class="form-control">
 						</div>
@@ -121,7 +124,7 @@
 
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+						Not a tutor yet? <a href="{% url 'tutorLogin' %}" class="ml-2">Apply here</a>
 					</div>
 
 				</div>

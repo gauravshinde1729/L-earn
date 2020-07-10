@@ -1,0 +1,79 @@
+{% extends 'home/pre_base.html' %}
+{% block css %}
+    .diplay-mid{
+    display: block;
+    margin: 0 auto;
+    }
+.jumbotron-bk{
+     background: no-repeat url("https://images.unsplash.com/photo-1563518839049-f44a5e423f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+     background-size:cover;
+
+
+}
+{% endblock %}
+{% block body %}
+<div class="jumbotron jumbotron-fluid  jumbotron-bk">
+  <div class="container">
+    <h1 class="display-4 text-center white-lighter-hover" >Apply For Tutor</h1>
+    <p class="lead  text-center white-lighter-hover">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<div class="container ">
+
+    {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">Please Fill The Form Correctly</h4>
+
+            <p>{{message}}</p>
+
+        </div>
+            {% endfor %}
+    <form method="POST">
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="firstname">Firstname</label>
+      <input type="text" class="form-control " maxlength="20" id="firstname" name="firstname"onkeypress="return AvoidSpace(event)">
+    </div>
+       <div class="form-group col-md-6">
+      <label for="lastname">Lastname</label>
+      <input type="text" class="form-control" id="lastname" maxlength="20" name="lastname"onkeypress="return AvoidSpace(event)">
+    </div>
+
+  </div>
+          <div class="form-group col-md-6">
+    <label for="phone">Phone number</label>
+    <input type="telephone" class="form-control"  maxlength="30" id="phone" name="phone" onkeypress="return AvoidSpace(event)">
+  </div>
+          <div class="form-group col-md-6">
+    <label for="email">Email</label>
+    <input type="email" class="form-control"  maxlength="30" id="email" name="email" onkeypress="return AvoidSpace(event)">
+  </div>
+
+    <div class="form-group">
+    <label for="details">Tell us in brief why you want to join us?</label>
+      <textarea type="text" maxlength="100" class="form-control" id="details" name="details" ></textarea>
+  </div>
+            <div class="form-group">
+    <label for="experience">Please provide details about your teaching experience or about your current job</label>
+      <textarea type="text" maxlength="100" class="form-control" id="experience" name="experience" ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input type="text" class="form-control"  maxlength="20" id="city" name="city" onkeypress="return AvoidSpace(event)">
+  </div>
+
+  <button type="submit" class="btn btn-danger" >Apply Now</button>
+</form>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+  function AvoidSpace(event) {
+    var k = event ? event.which : window.event.keyCode;
+    if (k == 32) return false;
+}
+
+</script>
+{% endblock %}

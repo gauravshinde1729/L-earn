@@ -9,12 +9,12 @@ from Learn.decorators import allowed_users
 #if user is authunticated
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['student'])
+@allowed_users(allowed_roles=['students'])
 def index(request):
     return render(request,'platform/home.html')
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['student'])
+@allowed_users(allowed_roles=['students'])
 def profilePage(request):
     user = request.user;
     profile = UserProfile.objects.get(user=user)
@@ -22,7 +22,7 @@ def profilePage(request):
     return render(request,'platform/profilepage.html',context)
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['student'])
+@allowed_users(allowed_roles=['students'])
 def profileEdit(request):
     user = request.user;
     profile = UserProfile.objects.get(user=user)
